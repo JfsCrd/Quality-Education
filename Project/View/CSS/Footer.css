@@ -1,0 +1,11 @@
+.footer{
+    background-color:brown;
+    position: absolute;
+    bottom: unset;
+    margin-top: 50px;
+    position: absolute;
+}
+
+.footer p{
+    color: aliceblue;
+}

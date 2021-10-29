@@ -1,0 +1,70 @@
+.inicio{
+
+    padding-top: 10px;
+    padding-left: 30px;
+
+}
+
+.inicio h1{
+    font-size: 34px;
+    color: maroon;
+}
+
+.inicio p {
+    font-size: 20px;
+    color: saddlebrown;
+}
+
+
+/* CSS CURSOS */
+
+.cursos{
+    padding-top: 10px;
+    margin-top: 50px;
+    padding-left: 30px;
+}
+
+.cursos h1{
+    font-size: 34px;
+    color: black;
+}
+
+.cursos p {
+    font-size: 20px;
+    color: saddlebrown;
+}
+
+/* CSS PARCEIROS */
+.parceiros{
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.parceiros h1{
+    font-size: 34px;
+    color: darkred;
+}
+
+
+.parceiros p {
+    font-size: 20px;
+    color:darkslategrey;
+}
+
+/* CSS SOBRE */
+
+.sobre{
+    padding-top: 10px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.sobre h1{
+    font-size: 34px;
+    color: black;
+}
+
+.sobre p {
+    font-size: 20px;
+    color: saddlebrown;
+}
