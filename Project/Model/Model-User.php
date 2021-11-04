@@ -30,7 +30,7 @@
 
         include ("Model-DataBase.php");
 
-        $query = "DELETE FROM User WHRE idUser = '$idUser';";
+        $query = "DELETE FROM User WHERE idUser = '$idUser';";
         $command = mysqli_query($conn, $query);
 
 

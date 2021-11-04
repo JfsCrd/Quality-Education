@@ -4,8 +4,8 @@
 <head>
     <?php require_once('../Controller/Helpers/Restriction.php');?>
     
-    <?php include("../View/Helpers/Header.php");
-    session_start();
+    <?php session_start();
+    include("../View/Helpers/Header.php");
     ?>
 
     <title>Addministrator Board</title>
@@ -18,6 +18,9 @@
     <div style="margin-left: 20px; margin-top:80px">
         <div id="courses" style="height:200px;">
             <h3>Courses</h3>
+        <div>
+            <?php include("../View/Courses.php"); ?>
+        </div>
         </div>
 
         <hr>

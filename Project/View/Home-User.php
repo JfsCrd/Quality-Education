@@ -4,8 +4,10 @@
 <head>
 
     <?php require_once('../Controller/Helpers/Restriction.php');?>
-    <?php include("../View/Helpers/Header.php");
-    session_start(); ?>
+    
+    <?php session_start();
+    include("../View/Helpers/Header.php");
+    ?>
 
     <title>Student Board</title>
 </head>
