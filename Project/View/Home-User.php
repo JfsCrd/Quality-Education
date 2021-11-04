@@ -1,40 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-<?php include("..\View\Helpers\Header.php") ?>
 
-    <title>Página do Aluno</title>
+    <?php require_once('../Controller/Helpers/Restriction.php');?>
+    <?php include("../View/Helpers/Header.php");
+    session_start(); ?>
+
+    <title>Student Board</title>
 </head>
 
-<body class="body">
+<body>
 
-<?php include("../View/Helpers/Navbar.php") ?>
+    <?php include("../View/Helpers/Navbar-User.php") ?>
 
+    <div style="margin-left: 20px; margin-top: 80px;">
+        <div id="courses" style="height:200px;">
+            <h3>My Courses</h3>
+        </div>
+        <hr>
+        <div id="certificates" style="height:200px">
+            <h3>My Certificates</h3>
+        </div>
+        <hr>
+        <div id="bootcamps" style="height:200px">
+            <h3>My Bootcamps</h3>
+        </div>
 
-    <p style="background-color:burlywood; font-size:36px">Bem vindo, Aluno!</p>
+        <hr>
+    </div>
     
-
-    <div class="meus-cursos" style="height:200px;">
-        <h3>Meus Cursos</h3>     
-    </div>
-    <hr>
-    <div class="meu-certificados" style="height:200px">         
-        <h3>Meus Certificados</h3>
-    </div>
-    <hr>
-    <div class="meus-bootcamps" style="height:200px">
-        <h3>Meus Bootcamps</h3>
-    </div>
-
-    <div class="cursos-disponiveis" style="height:200px"> 
-        <h3>Cursos Disponíveis</h3>
-        
-    </div>
-    <hr>
-
     <?php include("../View/Helpers/Footer.php") ?>
-
-
-
 
 </body>
 

@@ -67,9 +67,26 @@
 
     }
 
+    function loginUser($email, $pass){
         
 
-    
-    
+        include ("Model-DataBase.php");
+        
+        $query = "SELECT * FROM user WHERE email = '$email' and password = '$pass';";
+
+        $command = mysqli_query($conn, $query);
+
+        $num_rows = mysqli_num_rows($command);
+
+        if($num_rows>= 1){
+            $user = mysqli_fetch_assoc($command); //transform dates in arrayss
+            return $user; 
+        }
+        
+        else            
+            return false;
+        
+
+    }
 
 ?>

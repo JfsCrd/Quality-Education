@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require_once('../Controller/Helpers/Restriction.php');?>
+    
+    <?php include("../View/Helpers/Header.php");
+    session_start();
+    ?>
 
-    <!-- Última versão CSS compilada e minificada -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Última versão JavaScript compilada e minificada -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" type="text/css" href="/View/CSS/Body.css" media="screen" />
-    <link rel="stylesheet" href="/View/HTML/header.html">
-    <link rel="stylesheet" href="/View/HTML/footer.html">
-
-    <title>Dashboard</title>
+    <title>Addministrator Board</title>
 </head>
-<body class="body">
 
-    <p style="background-color:cornsilk; font-size:36px">Bem vindo, ADM!</p>
-    
-    <div class="cursos-disponiveis" style="height:200px;">
-        <h3>Cursos Disponíveis</h3>     
+<body>
+
+    <?php include("../View/Helpers/Navbar-Adm.php") ?>
+
+    <div style="margin-left: 20px; margin-top:80px">
+        <div id="courses" style="height:200px;">
+            <h3>Courses</h3>
+        </div>
+
+        <hr>
+
+        <div id="bootcamps" style="height:200px;">
+            <h3>Bootcamps</h3>
+        </div>
+
+        <hr>
+
+        <div id="students" style="height:200px;">
+            <h3>Students</h3>
+        </div>
+
+        <hr>
     </div>
-    
-    <hr>
 
-    <div class="bootcamp-ativos" style="height:200px;">
-        <h3>Bootcamps Ativos</h3>     
-    </div>
-
-    <hr>
-
-    <div class="alunos-cadastrados" style="height:200px;">
-        <h3>Alunos</h3>     
-    </div>
-
-    <hr>
-    <?php include "../HTML/Footer.html" ?>
+    <?php include("../View/Helpers/Footer.php") ?>
 
 </body>
+
 </html>

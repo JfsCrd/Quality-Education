@@ -15,8 +15,9 @@
 
     <?php include "../View/Helpers/Navbar.php" ?>
 
-    <form action="../Controller/Controller-User.php" method="POST" name="register" style="margin: 100px;">
+    <form action="../Controller/Controller-User.php" method="POST" style="margin: 100px;">
 
+        <input type="hidden" name="action_form" value="register" style="display:none;"/>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Name</label>

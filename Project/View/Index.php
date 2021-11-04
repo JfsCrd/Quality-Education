@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-    <?php include ("..\View\Helpers\Header.php") ?>
+<?php include("../View/Helpers/Header.php");
+    session_start(); ?>
 
-    <title>Capacita</title>
+    <title>Quality Education</title>
 
 </head>
 
