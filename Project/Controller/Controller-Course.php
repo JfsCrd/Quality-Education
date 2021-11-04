@@ -26,4 +26,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    if($action_form ==="remove"){
+
+        $return_remove = deleteCourse($id);
+
+        if ($return_remove !=false) {
+            echo "<script language ='javascript' type='text/javascript'> alert('Success! Course deleted.'); window.location.href='../View/Home-Adm.php' </script>";
+        } 
+        else {
+            echo "<script language ='javascript' type='text/javascript'> alert('Error! Course not deleted!'); window.location.href='/View/Register.php' </script>";
+        }
+    }
+
+    if($action_form === "insert"){
+
+        
+        $return_insert = insertCourse($id, $name, $link, $details, $company);
+
+        if ($return_insert !=false) {
+            echo "<script language ='javascript' type='text/javascript'> alert('Success! Course inserted.'); window.location.href='../View/Home-Adm.php' </script>";
+        } 
+        else {
+            echo "<script language ='javascript' type='text/javascript'> alert('Error! Course not inserted!'); window.location.href='../View/Home-Adm.php' </script>";
+        }
+
+    }
+
     }

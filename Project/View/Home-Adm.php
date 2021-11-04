@@ -31,8 +31,8 @@
 
         <hr>
 
-        <div id="students" style="height:200px;">
-            <h3>Students</h3>
+        <div id="users" style="height:200px;">
+            <h3>Users</h3>
         </div>
 
         <hr>

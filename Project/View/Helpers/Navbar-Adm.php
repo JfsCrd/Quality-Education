@@ -13,7 +13,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a href="#courses" class="nav-link">Courses Availables</a></li>
                 <li class="nav-item"><a href="#bootcamps" class="nav-link">Bootscamps</a></li>
-                <li class="nav-item"><a href="#students" class="nav-link">Students</a></li>
+                <li class="nav-item"><a href="#users" class="nav-link">Users</a></li>
             </ul>
             <ul class="nav navbar-nav flex-row left-content-between ml-auto mr-2">
                 <li class="nav-item order- order-md-1">
