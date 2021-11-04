@@ -15,8 +15,12 @@
 
     <?php include "../View/Helpers/Navbar.php" ?>
 
-    <form action="../Controller/Controller-User.php" method="POST" style="margin: 100px;">
+    
+    <div style="margin-top: 80px; margin-left:100px" ><h1>Create your Account!</h1></div>
 
+
+    <form action="../Controller/Controller-User.php" method="POST" style="margin: 100px; margin-top: 20px;">
+    
         <input type="hidden" name="action_form" value="register" style="display:none;"/>
         <div class="form-row">
             <div class="form-group col-md-6">

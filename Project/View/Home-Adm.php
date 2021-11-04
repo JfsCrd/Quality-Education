@@ -16,10 +16,10 @@
     <?php include("../View/Helpers/Navbar-Adm.php") ?>
 
     <div style="margin-left: 20px; margin-top:80px">
-        <div id="courses" style="height:200px;">
+        <div id="courses">
             <h3>Courses</h3>
-        <div>
-            <?php include("../View/Courses.php"); ?>
+        <div style="margin-left:-200px;background-color:ghostwhite!important">
+            <?php include("../View/Boards/Adm-Courses.php"); ?>
         </div>
         </div>
 

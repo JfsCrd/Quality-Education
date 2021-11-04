@@ -15,6 +15,7 @@ $command = mysqli_query($conn, $query);
 </head>
 
 <body>
+    
     <div class="container theme-showcase" role="main">
         <div class="row">
             <div class="col-md-12">
@@ -23,8 +24,11 @@ $command = mysqli_query($conn, $query);
                         <tr>
                             <th>id</th>
                             <th>Name Course</th>
-                            <th>Action</th>
-                            <th><button type="button" class="btn-sm btn-success" data-toggle="modal" data-target="#insert">Insert</button></th>
+                            <th>Details</th>
+                            <th>Link</th>
+                            <th>Company</th>
+                            <th style="padding-left: 14%;">Action</th>
+                            <th><button type="button" class="btn-sm btn-success" data-toggle="modal" data-target="#insert" style="width: 100%;">Insert</button></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,15 +36,18 @@ $command = mysqli_query($conn, $query);
                             <tr>
                                 <td><?php echo $rows_courses['idCourse']; ?></td>
                                 <td><?php echo $rows_courses['Name']; ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#visualize" <?php echo $rows_courses['idCourse']; ?>">View</button>
-                                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#remove">Delet</button>
+                                <td><?php echo $rows_courses['Details']; ?></td>
+                                <td><?php echo $rows_courses['Link']; ?></td>
+                                <td><?php echo $rows_courses['SupportingCompany_idSupportingCompany'];?></th>
+                                <td style="padding-left: 10%;">
+                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#visualize<?php echo $rows_courses['idCourse'];?>">View</button>
+                                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit<?php echo $rows_courses['idCourse']; ?>">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#remove<?php echo $rows_courses['idCourse']; ?>"">Delet</button>
                                 </td>
                                 </tr>
 
                                 <!-- Modal Visualize -->
-                                <div class="modal fade" id="visualize" <?php echo $rows_courses['idCourse']; ?> tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="visualize<?php echo $rows_courses['idCourse'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -59,7 +66,7 @@ $command = mysqli_query($conn, $query);
                                 <!-- End Visualize -->
 
                                 <!-- Modal Edit -->
-                                <div class="modal fade" id="edit" <?php echo $rows_courses['idCourse']; ?> tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="edit<?php echo $rows_courses['idCourse'];?>" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -104,7 +111,7 @@ $command = mysqli_query($conn, $query);
                                 <!-- End Modal Edit -->
 
                                 <!-- Modal Remove -->
-                                <div class="modal fade" id="remove" <?php echo $rows_courses['idCourse']; ?> tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="remove<?php echo $rows_courses['idCourse'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -117,7 +124,7 @@ $command = mysqli_query($conn, $query);
                                                 <label>Remove <?php echo $rows_courses['Name']; ?>?</label>
                                                 <br/>
                                                 <input type="text" name="txtId" value="<?php echo $rows_courses['idCourse']; ?> " style="display:none;"  />
-                                                <button type="submit" class="btn btn-sm btn-danger">Edit</button>
+                                                <button type="submit" class="btn btn-sm btn-danger">Remove</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -126,7 +133,7 @@ $command = mysqli_query($conn, $query);
                                 <!-- End Remove -->
 
                                 <!-- Insert -->
-                                <div class="modal fade" id="insert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="insert" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">

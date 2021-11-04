@@ -1,0 +1,13 @@
+body{
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-color:rgb(235, 225, 211);
+}   
+
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: black;
+}
