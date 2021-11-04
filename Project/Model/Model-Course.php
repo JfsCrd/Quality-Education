@@ -1,7 +1,5 @@
 <?php
 
-use FFI\ParserException;
-
 require_once ("Model-DataBase.php");
 
     //Insert course

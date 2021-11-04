@@ -1,7 +1,6 @@
 <?php
 
 include_once("../Model/Model-DataBase.php");
-include_once("../Model/Model-User.php");
 
 $query = "SELECT * FROM course";
 $command = mysqli_query($conn, $query);
@@ -26,23 +25,23 @@ $command = mysqli_query($conn, $query);
                             <th>Name Course</th>
                             <th>Details</th>
                             <th>Link</th>
-                            <th>Company</th>
-                            <th style="padding-left: 14%;">Action</th>
-                            <th><button type="button" class="btn-sm btn-success" data-toggle="modal" data-target="#insert" style="width: 100%;">Insert</button></th>
+                            <th style="width: 50px;">Company</th>
+                            <th style="text-align: center;">Action</th>
+                            <th style="text-align:right"><button type="button" class="btn-sm btn-success" data-toggle="modal" data-target="#insert" style="width: 100px;">Insert</button></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while ($rows_courses = mysqli_fetch_assoc($command)) { ?>
+                        <?php while ($rows_courses = mysqli_fetch_assoc($command)) {?>
                             <tr>
                                 <td><?php echo $rows_courses['idCourse']; ?></td>
                                 <td><?php echo $rows_courses['Name']; ?></td>
                                 <td><?php echo $rows_courses['Details']; ?></td>
                                 <td><?php echo $rows_courses['Link']; ?></td>
                                 <td><?php echo $rows_courses['SupportingCompany_idSupportingCompany'];?></th>
-                                <td style="padding-left: 10%;">
+                                <td style="width: 300px; text-align:end">
                                     <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#visualize<?php echo $rows_courses['idCourse'];?>">View</button>
-                                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit<?php echo $rows_courses['idCourse']; ?>">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#remove<?php echo $rows_courses['idCourse']; ?>"">Delet</button>
+                                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit<?php echo $rows_courses['idCourse'];?>">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#remove<?php echo $rows_courses['idCourse'];?>">Delet</button>
                                 </td>
                                 </tr>
 
