@@ -3,9 +3,7 @@
 include_once("../Model/Model-DataBase.php");
 
 
-$query = "SELECT course.name FROM course 
-            inner join user_has_course as user on (user_has_course.user_idUser = user.idUser)
-            inner join user_has_course as course on (user_has_course.course_idCourse = course.idCourse) ";
+$query = "SELECT * FROM user_has_course ";
 
 $command = mysqli_query($conn, $query);
 ?>
@@ -35,15 +33,16 @@ $command = mysqli_query($conn, $query);
                     <tbody>
                         <?php while ($rows_courses = mysqli_fetch_assoc($command)) {?>
                             <tr>
-                                <td style="width: 150px;"><?php echo $rows_courses['Name']; ?></td>
-                                <td style="width: 350px;"><?php echo $rows_courses['Details']; ?></td>
-                                <td style="margin: 300px;"><?php echo $rows_courses['Link']; ?></td>
-                                <td><?php echo $rows_courses['SupportingCompany_idSupportingCompany']?></th>
-                                <td style="width: 160px;"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#visualizeCourse<?php echo $rows_courses['idCourse'];?>">View</button></td>
+                                <td style="width: 150px;"><?php echo $rows_courses['Course_idCourse']; ?></td>
+                                <td style="width: 350px;"></td>
+                                <td style="margin: 300px;"></td>
+                                <td></th>
+                                <td style="width: 160px;"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#visualizeMatriculation<?php echo $rows_courses['idCourse'];?>">View</button></td>
+                                <td style="width: 160px;"><button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#unenroll<?php echo $rows_courses['idCourse'];?>">Unenroll</button></td>
                                 </tr>
 
                                 <!-- Modal Visualize -->
-                                <div class="modal fade" id="visualizeCourse<?php echo $rows_courses['idCourse'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="visualizeMatriculation<?php echo $rows_courses['idCourse'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -67,7 +66,28 @@ $command = mysqli_query($conn, $query);
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <!-- End Modal View-->
+
+                                <!-- Modal Visualize -->
+                                <div class="modal fade" id="#unenroll<?php echo $rows_courses['idCourse'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title text-left" id="myModalLabel" style="text-align: left;">Unenroll</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                            <form method="POST" action="../Controller/Controller-Matriculation.php" value="removeMatriculation"> 
+                                                <input type="hidden" name="action_form" value="removeMatriculation" style="display:none;"/>
+                                                <input style="display:none" type="text" name="userId" value="<?php echo $_SESSION['s_idUser']?>"/>
+                                                <input style="display:none" type="text" name="courseId" value="<?php echo $rows_courses['idCourse']?>"/>
+                                                    <button type="submit" class="btn btn-sm btn-danger" data-toggle="../Controller/Controller-Matriculation.php" data-target="#visualizeCourse<?php echo $rows_courses['idCourse'];?>">unenroll</button>
+                                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Modal unenroll -->
                                 
                             <?php } 
                         ?> 

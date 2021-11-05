@@ -34,9 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if($action_form ==="remove"){
+    if($action_form ==="removeMatriculation"){
 
-        $return_remove = deleteCourse($id);
+        $return_remove = deleteCourse($idCourse,$idUser);
 
         if ($return_remove !=false) {
             echo "<script language ='javascript' type='text/javascript'> alert('Success! Course deleted.'); window.location.href='../View/Home-Adm.php' </script>";
