@@ -1,8 +1,6 @@
 <?php
-
+//Matriculation screen card, available on the User dashboard
 include_once("../Model/Model-DataBase.php");
-
-
 $query = "SELECT * FROM user_has_course ";
 
 $command = mysqli_query($conn, $query);
@@ -31,6 +29,7 @@ $command = mysqli_query($conn, $query);
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Return select registers end set in the table-->
                         <?php while ($rows_courses = mysqli_fetch_assoc($command)) {?>
                             <tr>
                                 <td style="width: 150px;"><?php echo $rows_courses['Course_idCourse']; ?></td>

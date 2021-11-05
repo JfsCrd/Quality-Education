@@ -1,5 +1,5 @@
 <?php
-
+//Users screen card, available on the ADM dashboard
 include_once("../Model/Model-DataBase.php");
 
 $query = "SELECT * FROM user";
@@ -30,6 +30,7 @@ $command = mysqli_query($conn, $query);
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Return select registers end set in the table-->
                         <?php while ($rows_Users = mysqli_fetch_assoc($command)) { ?>
                             <tr>
                                 <td style="width: 50px;"><?php if ($rows_Users['Rank'] == 1) echo 'User';

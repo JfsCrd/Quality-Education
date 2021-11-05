@@ -1,5 +1,5 @@
 <?php
-
+//Courses screen card, available on the User dashboard
 include_once("../Model/Model-DataBase.php");
 
 
@@ -31,6 +31,7 @@ $command2 = mysqli_query($conn, $query);
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Return select registers end set in the table-->
                         <?php while ($rows_courses = mysqli_fetch_assoc($command)) {?>
                             <tr>
                                 <td style="width: 150px;"><?php echo $rows_courses['Name']; ?></td>

@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $converted_date = convertDate($date);
 
-    if($action_form === "matriculation"){
+    if($action_form === "matriculation"){ //call the function insertCourse of Model-Matriculation
 
         $return_matriculation = insertMatriculation($idCourse, $idUser, $converted_date);
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if($action_form ==="removeMatriculation"){
+    if($action_form ==="removeMatriculation"){ //call the function removeCourse of Model-Matriculation
 
         $return_remove = deleteCourse($idCourse,$idUser);
 
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if($action_form === "insert"){
+    if($action_form === "insert"){ //call the function insertMatriculation of Model-Matriculation
 
         
         $return_insert = insertCourse($id, $name, $link, $details, $company);

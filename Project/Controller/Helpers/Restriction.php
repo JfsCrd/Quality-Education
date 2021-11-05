@@ -1,6 +1,5 @@
-<?php
+<?php //Validates if the user is logged in, if not, it does not allow entering pages where this file exists
 session_start();
-// Se o usuário não está logado, manda para página de login.
 if (!isset($_SESSION['s_idUser'])) {
     header("Location: http://localhost/view/index.php");
     exit;

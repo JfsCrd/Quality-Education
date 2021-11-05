@@ -16,7 +16,7 @@ require_once ("Model-DataBase.php");
         
     }
 
-    //Delete course
+    //Delete Matriculation
     function removeMatriculation($idCourse, $idUser){
 
         include ("Model-DataBase.php");

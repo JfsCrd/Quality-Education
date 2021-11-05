@@ -1,7 +1,6 @@
 <?php
-
+//Courses screen card, available on the ADM dashboard
 include_once("../Model/Model-DataBase.php");
-
 $query = "SELECT * FROM course";
 $command = mysqli_query($conn, $query);
 ?>
@@ -31,6 +30,7 @@ $command = mysqli_query($conn, $query);
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Return select registers end set in the table-->
                         <?php while ($rows_courses = mysqli_fetch_assoc($command)) {?>
                             <tr>
                                 <td style="width: 50px;"><?php echo $rows_courses['idCourse']; ?></td>

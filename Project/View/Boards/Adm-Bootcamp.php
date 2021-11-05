@@ -1,7 +1,6 @@
 <?php
-
+//Bootcamps screen card, available on the ADM dashboard
 include_once("../Model/Model-DataBase.php");
-
 $query = "SELECT * FROM bootcamp";
 $command = mysqli_query($conn, $query);
 ?>
@@ -29,7 +28,8 @@ $command = mysqli_query($conn, $query);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while ($rows_bootcamps = mysqli_fetch_assoc($command)) { ?>
+                        <!-- Return select registers end set in the table-->
+                        <?php while ($rows_bootcamps = mysqli_fetch_assoc($command)) { ?> 
                             <tr>
                                 <td style="width: 50px;"><?php echo $rows_bootcamps['idBootcamp']; ?></td>
                                 <td style="width: 350px;"><?php echo $rows_bootcamps['Name']; ?></td>

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if($action_form==="edit"){
 
-        $return_edit = editCourse($id, $name, $details, $company, $link);
+        $return_edit = editCourse($id, $name, $details, $company, $link); //call the function editCourse of Model-Couse
 
         if ($return_edit !=false) {
             echo "<script language ='javascript' type='text/javascript'> alert('Success! Course altered.'); window.location.href='../View/Home-Adm.php' </script>";
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if($action_form ==="remove"){
+    if($action_form ==="remove"){ //call the function removeCourse of Model-Couse
 
         $return_remove = deleteCourse($id);
 
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if($action_form === "insert"){
+    if($action_form === "insert"){ //call the function insertCourse of Model-Couse
 
         
         $return_insert = insertCourse($id, $name, $link, $details, $company);

@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $converted_date = convertDate($birth);
 
-    if ($action_form === 'register') { //register
+    if ($action_form === 'register') { //call the function insertUser of Model-User
         if ($pass1 === $pass2) {
 
             $return_insert = insertUser($cpf, $name, $birth, $email, $telephone, $pass1, $rank, $full_adress);
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } 
         
-    elseif($action_form === 'login'){ //login
+    elseif($action_form === 'login'){ //call the function loginUser of Model-User
         $return_login = loginUser($login_email, $login_pass);
 
         if ($return_login != false) {
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 
-    elseif ($action_form === 'edit') {
+    elseif ($action_form === 'edit') { //call the function editUser of Model-User -- can only edit RANK
 
         $return_edit = editUser($idUser, $rank_new);
 
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 
-    elseif ($action_form === 'delete') {
+    elseif ($action_form === 'delete') { //call the function deleteUser of Model-User -- NOT USED
         
         $return_delete = deleteUser($idUser);
 
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 
-    if($button_click === 'checked'){
+    if($button_click === 'checked'){ //call the function for Destroy Session of "logout"
         session_destroy(); 
     }
 

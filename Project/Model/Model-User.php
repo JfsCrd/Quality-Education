@@ -2,11 +2,9 @@
 
     require_once ("Model-DataBase.php");
 
-        //Insert user
-    function insertUser ($cpf, $name, $date, $email, $telephone, $pass, $rank, $full_adress){
-
+        
+    function insertUser ($cpf, $name, $date, $email, $telephone, $pass, $rank, $full_adress){ //Insert user
         include ("Model-DataBase.php");
-
 
         $sql = "INSERT INTO user (idUser, Name, Birth, Email, Telephone, Password, Rank, Adress)
         VALUES ('$cpf', '$name', '$date', '$email', '$telephone', '$pass', $rank, '$full_adress');";
@@ -17,44 +15,20 @@
 
     }
 
-        //Delete user
-
-    function deleteUser($idUser){
+        
+    function deleteUser($idUser){ //Delete user
 
         include ("Model-DataBase.php");
 
         $query = "DELETE FROM User WHERE idUser = '$idUser';";
         $command = mysqli_query($conn, $query);
 
-
         return $command;
         
     }
 
-        //List User
 
-    function listUser(){
-
-        include ("Model-DataBase.php");
-
-        $query = "SELECT * FROM User";
-
-        $command = mysqli_query($conn, $query);
-
-        if($command === TRUE){
-            foreach($conn->query($query) as $value){
-                array_push($user, $value);
-            }
-        }
-        else{
-            echo "<script language ='javascript' type='text/javascript'> alert('Falha! Não foi possível encontrar usuários'); window.location.href='' </script>";
-            return false;
-        }
-
-    }
-
-    function loginUser($email, $pass){
-        
+    function loginUser($email, $pass){ //login
 
         include ("Model-DataBase.php");
         
@@ -71,11 +45,10 @@
         
         else            
             return false;
-        
 
     }
 
-    function editUser($idUser, $rank){
+    function editUser($idUser, $rank){ //edit user
 
         include ("Model-DataBase.php");
 
