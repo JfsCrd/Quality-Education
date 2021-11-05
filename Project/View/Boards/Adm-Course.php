@@ -27,26 +27,25 @@ $command = mysqli_query($conn, $query);
                             <th>Link</th>
                             <th style="width: 50px;">Company</th>
                             <th style="text-align: center;">Action</th>
-                            <th style="text-align:right"><button type="button" class="btn-sm btn-success" data-toggle="modal" data-target="#insert" style="width: 100px;">Insert</button></th>
+                            <th style="text-align:end;"><button type="button" class="btn-sm btn-success" data-toggle="modal" data-target="#insertCourse" style="width: 100px;">Insert</button></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while ($rows_courses = mysqli_fetch_assoc($command)) {?>
                             <tr>
-                                <td><?php echo $rows_courses['idCourse']; ?></td>
-                                <td><?php echo $rows_courses['Name']; ?></td>
-                                <td><?php echo $rows_courses['Details']; ?></td>
-                                <td><?php echo $rows_courses['Link']; ?></td>
+                                <td style="width: 50px;"><?php echo $rows_courses['idCourse']; ?></td>
+                                <td style="width: 150px;"><?php echo $rows_courses['Name']; ?></td>
+                                <td style="width: 350px;"><?php echo $rows_courses['Details']; ?></td>
+                                <td style="margin: 300px;"><?php echo $rows_courses['Link']; ?></td>
                                 <td><?php echo $rows_courses['SupportingCompany_idSupportingCompany'];?></th>
-                                <td style="width: 300px; text-align:end">
-                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#visualize<?php echo $rows_courses['idCourse'];?>">View</button>
-                                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit<?php echo $rows_courses['idCourse'];?>">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#remove<?php echo $rows_courses['idCourse'];?>">Delet</button>
+                                <td style="width: 160px;"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#visualizeCourse<?php echo $rows_courses['idCourse'];?>">View</button>
+                                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editCourse<?php echo $rows_courses['idCourse'];?>">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#removeCourse<?php echo $rows_courses['idCourse'];?>">Delet</button>
                                 </td>
                                 </tr>
 
                                 <!-- Modal Visualize -->
-                                <div class="modal fade" id="visualize<?php echo $rows_courses['idCourse'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="visualizeCourse<?php echo $rows_courses['idCourse'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -65,11 +64,11 @@ $command = mysqli_query($conn, $query);
                                 <!-- End Visualize -->
 
                                 <!-- Modal Edit -->
-                                <div class="modal fade" id="edit<?php echo $rows_courses['idCourse'];?>" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="editCourse<?php echo $rows_courses['idCourse'];?>" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title text-left" id="myModalLabel" style="text-align: left;"><?php echo $rows_courses['Name']; ?></h4>
+                                                <h4 class="modal-title text-left" id="myModalLabel" style="text-align: left;"><?php echo 'Edit '. $rows_courses['Name']; ?></h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
                                             <div class="modal-body">
@@ -110,11 +109,11 @@ $command = mysqli_query($conn, $query);
                                 <!-- End Modal Edit -->
 
                                 <!-- Modal Remove -->
-                                <div class="modal fade" id="remove<?php echo $rows_courses['idCourse'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="removeCourse<?php echo $rows_courses['idCourse'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title text-left" id="myModalLabel" style="text-align: left;"><?php echo $rows_courses['Name']; ?></h4>
+                                                <h4 class="modal-title text-left" id="myModalLabel" style="text-align: left;"><?php echo 'Delete '. $rows_courses['Name']; ?></h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
                                             <div class="modal-body">
@@ -132,7 +131,7 @@ $command = mysqli_query($conn, $query);
                                 <!-- End Remove -->
 
                                 <!-- Insert -->
-                                <div class="modal fade" id="insert" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal fade" id="insertCourse" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">

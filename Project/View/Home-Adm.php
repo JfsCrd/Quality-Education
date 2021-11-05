@@ -18,7 +18,7 @@
     <div style="margin-left: 20px; margin-top:80px">
         <div id="courses">
             <h3>Courses</h3>
-        <div style="margin-left:-200px;background-color:ghostwhite!important">
+        <div style="margin-left:-200px;background-color:floralwhite!important">
             <?php include("../View/Boards/Adm-Course.php"); ?>
         </div>
         </div>
@@ -27,7 +27,7 @@
 
         <div id="bootcamps" style="height:200px;">
             <h3>Bootcamps</h3>
-            <div style="margin-left:-200px;background-color:ghostwhite!important">
+            <div style="margin-left:-200px;background-color:floralwhite!important">
             <?php include("../View/Boards/Adm-Bootcamp.php"); ?>
         </div>
         </div>

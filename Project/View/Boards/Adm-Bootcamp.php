@@ -23,24 +23,25 @@ $command = mysqli_query($conn, $query);
                         <tr>
                             <th>id</th>
                             <th>Name Bootcamp</th>
-                            <th style="text-align:end;">Action</th>
-                            <th style="text-align:end;"><button type="button" class="btn-sm btn-success" data-toggle="modal" data-target="#insert_bootcamp" style="width: 100px;">Insert</button></th>
+                            <th>Description</th>
+                            <th style="text-align: center;">Action</th>
+                            <th style="text-align:end;"><button type="button" class="btn-sm btn-success" data-toggle="modal" data-target="#insertBoot" style="width: 100px;">Insert</button></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while ($rows_bootcamps = mysqli_fetch_assoc($command)) { ?>
                             <tr>
-                                <td><?php echo $rows_bootcamps['idBootcamp']; ?></td>
-                                <td><?php echo $rows_bootcamps['Name']; ?></td>
-                                <td style="width: 300px; text-align:end">
-                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#visualize<?php echo $rows_bootcamps['idBootcamp']; ?>">View</button>
-                                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit<?php echo $rows_bootcamps['idBootcamp']; ?>">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#remove<?php echo $rows_bootcamps['idBootcamp']; ?>">Delet</button>
+                                <td style="width: 50px;"><?php echo $rows_bootcamps['idBootcamp']; ?></td>
+                                <td style="width: 350px;"><?php echo $rows_bootcamps['Name']; ?></td>
+                                <td style="width: 450px;"><?php echo $rows_bootcamps['Name']; ?></td>
+                                <td style="width: 160px;"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#visualizeBoot<?php echo $rows_bootcamps['idBootcamp']; ?>">View</button>
+                                    <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editBoot<?php echo $rows_bootcamps['idBootcamp']; ?>">Edit</button>
+                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#removeBoot<?php echo $rows_bootcamps['idBootcamp']; ?>">Delet</button>
                                 </td>
                             </tr>
 
                             <!-- Modal Visualize -->
-                            <div class=" modal fade" id="visualize<?php echo $rows_bootcamps['idBootcamp']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class=" modal fade" id="visualizeBoot<?php echo $rows_bootcamps['idBootcamp']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -57,11 +58,11 @@ $command = mysqli_query($conn, $query);
                             <!-- End Visualize -->
 
                             <!-- Modal Edit -->
-                            <div class="modal fade" id="edit<?php echo $rows_bootcamps['idBootcamp']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal fade" id="editBoot<?php echo $rows_bootcamps['idBootcamp']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title text-left" id="myModalLabel" style="text-align: left;"><?php echo $rows_bootcamps['Name']; ?></h4>
+                                            <h4 class="modal-title text-left" id="myModalLabel" style="text-align: left;"><?php echo 'Edit '. $rows_bootcamps['Name']; ?></h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         </div>
                                         <div class="modal-body">
@@ -89,11 +90,11 @@ $command = mysqli_query($conn, $query);
                             <!-- End Modal Edit -->
 
                             <!-- Modal Remove -->
-                            <div class="modal fade" id="remove<?php echo $rows_bootcamps['idBootcamp']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal fade" id="removeBoot<?php echo $rows_bootcamps['idBootcamp']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title text-left" id="myModalLabel" style="text-align: left;"><?php echo $rows_bootcamps['Name']; ?></h4>
+                                            <h4 class="modal-title text-left" id="myModalLabel" style="text-align: left;"><?php echo 'Delete '.$rows_bootcamps['Name']; ?></h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         </div>
                                         <div class="modal-body">
@@ -111,7 +112,7 @@ $command = mysqli_query($conn, $query);
                             <!-- End Remove -->
 
                             <!-- Insert -->
-                            <div class="modal fade" id="insert_bootcamp" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal fade" id="insertBoot" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -132,16 +133,16 @@ $command = mysqli_query($conn, $query);
                                                 <br />
                                                 <br />
                                                 <button type="submit" class="btn btn-sm btn-success">Insert</button>
-                                            </form>
+                                                </form>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <?php }
-                    ?>
-                </tbody>
-            </table>
+                            <?php } 
+                        ?> 
+                        </tbody>
+                </table>
             </div>
         </div>
     </div>
