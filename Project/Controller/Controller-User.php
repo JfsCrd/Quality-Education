@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login_pass = filter_input(INPUT_POST, "loginPass");
     $rank = 1;
     $action_form = filter_input(INPUT_POST, "action_form");
-    
     $button_click = filter_input(INPUT_POST, "button");
 
     $full_adress = $adress . ", " . $city . ", " . $state . ", " . $country;
@@ -37,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $converted_date = convertDate($birth);
 
-    if ($action_form == 'register') { //register
+    if ($action_form === 'register') { //register
         if ($pass1 === $pass2) {
 
-            $return_insert = insertUser($cpf, $name, $date, $email, $telephone, $pass1, $rank, $full_adress);
+            $return_insert = insertUser($cpf, $name, $birth, $email, $telephone, $pass1, $rank, $full_adress);
 
             if ($return_insert === true) {
                 echo "<script language ='javascript' type='text/javascript'> alert('Success! Use your login data to access.'); window.location.href='/View/Index.php' </script>";
@@ -52,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } 
         
-    else { //login
+    elseif($action_form === 'login'){ //login
         $return_login = loginUser($login_email, $login_pass);
 
         if ($return_login != false) {
@@ -78,12 +77,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 
-    if($button_click === 'checked'){
-        
-        session_destroy(); 
-        
+    elseif ($action_form === 'edit') {
 
-        
+        $rank_new = $_POST['selectRank'];
+        $idUser = $_POST['idEdit'];
+
+        $return_edit = editUser($idUser, $rank_new);
+
+        if($return_edit != false)
+            echo "<script type='text/javascript'>alert('User edited!');window.location.href ='../View/Home-ADM.php';</script>";
+
+        else
+            echo "<script type='text/javascript'>alert('User not edited!');window.location.href ='../View/Home-ADM.php';</script>";
+
+    }
+
+    if($button_click === 'checked'){
+        session_destroy(); 
     }
 
 

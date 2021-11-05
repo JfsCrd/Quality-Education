@@ -4,7 +4,7 @@
 <head>
     <?php require_once('../Controller/Helpers/Restriction.php');?>
     
-    <?php session_start();
+    <?php
     include("../View/Helpers/Header.php");
     ?>
 
@@ -20,24 +20,26 @@
             <h3>Courses</h3>
         <div style="margin-left:-200px;background-color:floralwhite!important">
             <?php include("../View/Boards/Adm-Course.php"); ?>
-        </div>
+            </div>
         </div>
 
         <hr>
 
-        <div id="bootcamps" style="height:200px;">
+        <div id="bootcamps">
             <h3>Bootcamps</h3>
             <div style="margin-left:-200px;background-color:floralwhite!important">
             <?php include("../View/Boards/Adm-Bootcamp.php"); ?>
-        </div>
+            </div>
         </div>
 
         <hr>
 
-        <div id="users" style="height:200px;">
+        <div id="users">
             <h3>Users</h3>
         </div>
-
+        <div style="margin-left:-200px;background-color:floralwhite!important">
+            <?php include("../View/Boards/Adm-User.php"); ?>
+        </div>
         <hr>
     </div>
 

@@ -89,4 +89,16 @@
 
     }
 
+    function editUser($idUser, $rank){
+
+        include ("Model-DataBase.php");
+
+        $query = "UPDATE user set rank = '$rank' WHERE idUser = '$idUser';";
+
+        $command = mysqli_query($conn, $query);
+
+        return $command;
+
+    }
+
 ?>
