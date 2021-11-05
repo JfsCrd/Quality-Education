@@ -23,8 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rank = 1;
     $action_form = filter_input(INPUT_POST, "action_form");
     $button_click = filter_input(INPUT_POST, "button");
+    $idUser = $_POST['txtId'];
+    $rank_new = $_POST['selectRank'];
 
-    $full_adress = $adress . ", " . $city . ", " . $state . ", " . $country;
+    $full_adress = "". $adress . ", " . $city . ", " . $state . ", " . $country;
 
     function convertDate($dt){
         $day = substr($dt, 0, 2);
@@ -79,9 +81,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     elseif ($action_form === 'edit') {
 
-        $rank_new = $_POST['selectRank'];
-        $idUser = $_POST['idEdit'];
-
         $return_edit = editUser($idUser, $rank_new);
 
         if($return_edit != false)
@@ -89,6 +88,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         else
             echo "<script type='text/javascript'>alert('User not edited!');window.location.href ='../View/Home-ADM.php';</script>";
+
+    }
+
+    elseif ($action_form === 'delete') {
+        
+        $return_delete = deleteUser($idUser);
+
+        if($return_delete != false)
+        echo "<script type='text/javascript'>alert('User Deleted!');window.location.href ='../View/Home-ADM.php';</script>";
+
+    else
+        echo "<script type='text/javascript'>alert('User not Deleted!');window.location.href ='../View/Home-ADM.php';</script>";
 
     }
 

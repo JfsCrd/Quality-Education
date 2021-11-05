@@ -13,15 +13,8 @@
 
         $command = mysqli_query($conn, $sql);
 
+        return $command;
 
-        if($command === TRUE){
-            echo "<script>console.log('Debug Objects: " . "Insert success!" . "' );</script>";
-            return true;
-        }
-        else{
-            echo "<script>console.log('Debug Objects: " . "Insert error!" . "' );</script>";
-            return false;
-        }
     }
 
         //Delete user
@@ -34,14 +27,7 @@
         $command = mysqli_query($conn, $query);
 
 
-        if($command === TRUE){
-            echo "<script language ='javascript' type='text/javascript'> alert('Sucesso! Usuário removido do banco de dados.'); window.location.href='' </script>";
-            return true;
-        }
-        else{
-            echo "<script language ='javascript' type='text/javascript'> alert('Falha! Usuário não removido do banco de dados.'); window.location.href='' </script>";
-            return false;
-        }
+        return $command;
         
     }
 

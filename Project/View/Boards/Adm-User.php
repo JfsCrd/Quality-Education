@@ -80,7 +80,7 @@ $command = mysqli_query($conn, $query);
                                                 <input type="hidden" name="action_form" value="edit" style="display:none;" />
                                                 <label>ID</label>
                                                 <br />
-                                                <input type="text" name="idEdit" readonly="true" value="<?php echo $rows_Users['idUser']; ?>" />
+                                                <input type="text" name="txtId" readonly="true" value="<?php echo $rows_Users['idUser']; ?>" />
                                                 <br />
                                                 <br />
                                                 <label>Name</label>
@@ -135,8 +135,8 @@ $command = mysqli_query($conn, $query);
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
-                            <form action="../Controller/Controller-User.php" method="POST" value="remove">
-                                <input type="hidden" name="action_form" value="remove" style="display:none;" />
+                            <form action="../Controller/Controller-User.php" method="POST" value="delete">
+                                <input type="hidden" name="action_form" value="delete" style="display:none;" />
                                 <label>Remove <?php echo $rows_Users['Name']; ?>?</label>
                                 <br />
                                 <input type="text" name="txtId" value="<?php echo $rows_Users['idUser']; ?> " style="display:none;" />
