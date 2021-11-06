@@ -84,10 +84,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $return_edit = editUser($idUser, $rank_new);
 
         if($return_edit != false)
-            echo "<script type='text/javascript'>alert('User edited!');window.location.href ='../View/Home-ADM.php';</script>";
+            echo "<script type='text/javascript'>alert('User edited!');window.location.href ='../View/Home-Adm.php';</script>";
 
         else
-            echo "<script type='text/javascript'>alert('User not edited!');window.location.href ='../View/Home-ADM.php';</script>";
+            echo "<script type='text/javascript'>alert('User not edited!');window.location.href ='../View/Home-Adm.php';</script>";
 
     }
 
@@ -96,10 +96,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $return_delete = deleteUser($idUser);
 
         if($return_delete != false)
-        echo "<script type='text/javascript'>alert('User Deleted!');window.location.href ='../View/Home-ADM.php';</script>";
+        echo "<script type='text/javascript'>alert('User Deleted!');window.location.href ='../View/Home-Adm.php';</script>";
 
     else
-        echo "<script type='text/javascript'>alert('User not Deleted!');window.location.href ='../View/Home-ADM.php';</script>";
+        echo "<script type='text/javascript'>alert('User not Deleted!');window.location.href ='../View/Home-Adm.php';</script>";
 
     }
 
